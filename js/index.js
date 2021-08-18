@@ -13,6 +13,7 @@ function updateSubtotal(product) {
   return currentSubtotal;
 }
 
+
 function calculateAll() {
   // ITERATION 2
   const productsList = document.getElementsByClassName('product');
@@ -27,6 +28,7 @@ function calculateAll() {
   totalSlot.innerText = totalSum.toFixed(2);
 }
 
+
 // ITERATION 4
 function removeProduct(elementGrandparent) {
   // getting the table body element
@@ -38,20 +40,6 @@ function removeProduct(elementGrandparent) {
   calculateAll();
 
 }
-  //  REMOVE: TRY ONE
-// function removeProduct(event) {
-//   // we need to acess the current element's (btn) grandparent for removal (tr)
-//   const elementGrandparent = event.currentTarget.parentElement.parentElement; 
-//   // getting the table body element
-//   const tableBodyElement = document.getElementById('table-body');
-//   // removing the current clicked element from the table
-//   tableBodyElement.removeChild(elementGrandparent);
-
-//   // update the total price after excluding the current item
-//   calculateAll();
-// }
-
-
 
 
 // ITERATION 5
@@ -94,14 +82,8 @@ window.addEventListener('load', () => {
   // To calculate subtotals and totals when the calculate btn is clicked
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  
-  //  REMOVE: TRY ONE
-  // to remove itens from the list thru the remove btns
-  // const removeBtns = document.querySelectorAll('.btn-remove');
-  // for (let i = 0; i < removeBtns.length; i++) {
-  //   removeBtns[i].addEventListener('click', removeProduct);
-  // }  
 });
+
 
 // event delegation: tracking the click on the 'remove' btn
 document.addEventListener('click', (event) => {
